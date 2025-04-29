@@ -64,13 +64,7 @@ export default {
       this.message =
         "Bà tha thứ cho tui thì cho tui tín hiệu nhé, 2 giây sau nó bưng bà đi liền 😭🙏";
       setTimeout(() => {
-        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-        if (isMobile) {
-          window.location.href =
-            "intent://instagram.com/htrg.20#Intent;scheme=https;package=com.android.chrome;end";
-        } else {
-          window.location.href = "https://www.instagram.com/htrg.20/";
-        }
+        window.location.href = "https://www.instagram.com/htrg.20/";
       }, 2000);
     },
     moveButton() {
