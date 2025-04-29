@@ -8,7 +8,7 @@
       <p class="text">
         Xin lỗi bà nhìu, tui thật sự không có ý làm bà khó chịu 😭😭😭.
         Lúc đó tui lên cơn khùm nên có lỡ lời k hay về bà, tưởng rằng nó vô tri nhưng tui giờ hiểu là nó khiến bà cảm thấy không được tôn trọng.
-        Tui thành thật xin lỗi và hi vọng bà không tha thứ. Tui sẽ xài não trước khi nói để không làm bà khó chịu nữa. 😭😭😭😭
+        Tui thành thật xin lỗi và hi vọng bà tha thứ. Tui sẽ xài não trước khi nói để không làm bà khó chịu nữa. 😭😭😭😭
       </p>
   
       <div class="buttons">
