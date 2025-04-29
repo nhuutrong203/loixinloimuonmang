@@ -61,9 +61,16 @@ export default {
   },
   methods: {
     forgive() {
-      this.message = "Bà tha thứ cho tui thì cho tui tín hiệu nhé, 2 giây sau nó bưng bà đi liền 😭🙏";
+      this.message =
+        "Bà tha thứ cho tui thì cho tui tín hiệu nhé, 2 giây sau nó bưng bà đi liền 😭🙏";
       setTimeout(() => {
-        window.location.href = "https://www.instagram.com/htrg.20/";
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href =
+            "intent://instagram.com/htrg.20#Intent;scheme=https;package=com.android.chrome;end";
+        } else {
+          window.location.href = "https://www.instagram.com/htrg.20/";
+        }
       }, 2000);
     },
     moveButton() {
@@ -86,10 +93,7 @@ export default {
       do {
         newX = Math.floor(Math.random() * maxX) + padding;
         newY = Math.floor(Math.random() * maxY) + padding;
-      } while (
-        newX < padding + 120 &&
-        newY < cont.clientHeight
-      );
+      } while (newX < padding + 120 && newY < cont.clientHeight);
 
       this.noBtnPos = { x: newX, y: newY };
     },
@@ -98,12 +102,12 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 body {
   margin: 0;
   background: #fefae0;
-  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-family: "Roboto", "Segoe UI", sans-serif;
 }
 
 .container {
@@ -123,7 +127,7 @@ h1 {
   margin: 0.5rem 0;
   font-weight: 700;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .text {
@@ -194,26 +198,53 @@ button:hover {
   font-size: 2rem;
   animation: float 3s ease-in-out infinite;
 }
-.fun-emojis span:nth-child(2) { animation-delay: 0.5s; }
-.fun-emojis span:nth-child(3) { animation-delay: 1s; }
+.fun-emojis span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.fun-emojis span:nth-child(3) {
+  animation-delay: 1s;
+}
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes shake {
-  0% { transform: translate(0, 0); }
-  20% { transform: translate(-4px, 0); }
-  40% { transform: translate(4px, 0); }
-  60% { transform: translate(-4px, 0); }
-  80% { transform: translate(4px, 0); }
-  100% { transform: translate(0, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-4px, 0);
+  }
+  40% {
+    transform: translate(4px, 0);
+  }
+  60% {
+    transform: translate(-4px, 0);
+  }
+  80% {
+    transform: translate(4px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 .shake {
   animation: shake 0.5s ease;
@@ -251,6 +282,29 @@ button:hover {
 }
 
 @media screen and (max-width: 480px) {
+  .buttons {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    position: static;
+  }
+
+  .btn-forgive,
+  .btn-no-forgive {
+    position: static !important;
+    transform: none !important;
+    padding: 10px 18px;
+    width: 90%;
+    max-width: 280px;
+    font-size: 0.9rem;
+  }
+
+  .btn-no-forgive {
+    font-size: 0.85rem;
+  }
+
   .container {
     margin: 15px;
     padding: 1rem;
@@ -262,22 +316,6 @@ button:hover {
 
   .text {
     font-size: 0.95rem;
-  }
-
-  .buttons {
-    height: 150px;
-  }
-
-  .btn-forgive {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    margin-bottom: 10px;
-  }
-
-  .btn-no-forgive {
-    font-size: 0.85rem;
   }
 
   .spotify-embed {
