@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="fun-emojis">
-      <span>🎉</span><span>🎈</span><span>🎊</span>
+      <span>😭</span><span>😭</span><span>😭</span>
     </div>
     <h1>Đơn xin lỗi đóa hồng Bình Tân</h1>
     <h1>Thu Hương</h1>
